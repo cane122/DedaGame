@@ -15,11 +15,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lvpv"]
-radius = 105.0
-height = 380.0
+radius = 15.0
+height = 36.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w37j7"]
-radius = 276.007
+radius = 35.1141
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_j3amv")
