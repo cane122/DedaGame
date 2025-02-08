@@ -7,12 +7,12 @@ extends CharacterBody2D
 @export var attack_cooldown = 0.5
 
 # State variables
+var direction = "move_right"
 var is_attacking = false
 var can_attack = true
 var is_jumping = false
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var attack_cooldown_timer = $AttackCooldown
 @onready var attack_hitbox = $AttackArea/CollisionShape2D
 
 func _physics_process(delta):
@@ -42,11 +42,9 @@ func apply_gravity(delta):
 		is_jumping = false
 
 func handle_attack():
-	if Input.is_action_just_pressed("attack") and can_attack:
+	if Input.is_action_just_pressed("attack"):
 		is_attacking = true
-		can_attack = false
 		attack_hitbox.disabled = false
-		attack_cooldown_timer.start(attack_cooldown)
 
 func update_animations():
 	if is_attacking:

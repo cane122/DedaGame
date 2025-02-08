@@ -15,11 +15,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lvpv"]
-radius = 15.0
-height = 36.0
+radius = 19.0
+height = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w37j7"]
-radius = 35.1141
+radius = 37.1214
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_j3amv")
@@ -30,9 +30,9 @@ sprite_frames = SubResource("SpriteFrames_4lxmw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4lvpv")
 
-[node name="AreaOfAttack" type="Area2D" parent="."]
+[node name="AttackArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaOfAttack"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource("CircleShape2D_w37j7")
 
-[connection signal="body_entered" from="AreaOfAttack" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_area_2d_body_entered"]
