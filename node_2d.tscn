@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bjhyg53ao7dq0"]
 
-[ext_resource type="PackedScene" uid="uid://by5p5hnnndlxb" path="res://Characters/character_body_2d.tscn" id="1_g1any"]
+[ext_resource type="PackedScene" uid="uid://by5p5hnnndlxb" path="res://character_body_2d.tscn" id="1_g1any"]
 [ext_resource type="Script" path="res://worldScript.gd" id="1_p3nj6"]
 [ext_resource type="PackedScene" uid="uid://5fsg8ax5rl0w" path="res://TileMap/PlatformMapa.tscn" id="3_ty24y"]
 
@@ -23,7 +23,7 @@ script = ExtResource("1_p3nj6")
 physics_interpolation_mode = 1
 position = Vector2(333, -194)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_g1any")]
+[node name="CharacterBody2D" parent="." groups=["player_attack"] instance=ExtResource("1_g1any")]
 position = Vector2(263, 72)
 
 [node name="Instakill" type="Area2D" parent="."]
@@ -54,4 +54,5 @@ position = Vector2(-34.5, -4.5)
 shape = SubResource("RectangleShape2D_xg5yq")
 
 [connection signal="area_entered" from="Instakill" to="." method="_on_instakill_area_entered"]
+[connection signal="body_entered" from="Instakill" to="." method="_on_instakill_body_entered"]
 [connection signal="area_entered" from="WinArea" to="." method="_on_win_area_area_entered"]

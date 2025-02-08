@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://kwya6aacrtyq" path="res://Resources/lidl_seksi_png.png" id="5_m4egh"]
 [ext_resource type="Texture2D" uid="uid://b21vk36ulnlpd" path="res://Resources/litijum_png_transparent.png" id="6_a7qoc"]
 [ext_resource type="PackedScene" uid="uid://nmqb02ph0gjd" path="res://Objects/Vrata.tscn" id="7_lpyt5"]
-[ext_resource type="PackedScene" uid="uid://cn2qu1d6g135n" path="res://Characters/student.tscn" id="8_83rpt"]
+[ext_resource type="PackedScene" uid="uid://cov7qmbwpcqg2" path="res://Characters/student.tscn" id="8_83rpt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5uh8y"]
 texture = ExtResource("1_8cv4u")

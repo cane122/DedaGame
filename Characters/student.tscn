@@ -1,7 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://cov7qmbwpcqg2"]
+[gd_scene load_steps=4 format=3 uid="uid://cov7qmbwpcqg2"]
 
-[ext_resource type="PackedScene" uid="uid://di6oaavrmd7cn" path="res://Characters/student1.tscn" id="1_dstf6"]
+[ext_resource type="Script" path="res://Characters/student.gd" id="1_lbork"]
+[ext_resource type="Texture2D" uid="uid://cx2sn02xolfgx" path="res://Resources/student.png" id="2_m5gmq"]
 
-[node name="Student" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mosnr"]
 
-[node name="Student" parent="." instance=ExtResource("1_dstf6")]
+[node name="Student" type="CharacterBody2D"]
+script = ExtResource("1_lbork")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_m5gmq")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CapsuleShape2D_mosnr")
+
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

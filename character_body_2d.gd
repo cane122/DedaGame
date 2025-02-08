@@ -24,7 +24,6 @@ func _physics_process(delta):
 	
 	apply_gravity(delta)
 	handle_attack()
-	print(delta)
 	update_animations()
 	move_and_slide()
 	
