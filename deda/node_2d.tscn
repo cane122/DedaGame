@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjhyg53ao7dq0"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_sjji8"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_sjji8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
