@@ -1,1 +1,5 @@
+Timer
+Camera2D
+CollisionShape2D
+AnimatedSprite2D
 TileMapLayer
