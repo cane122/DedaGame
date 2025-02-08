@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://redf40pnvpay"]
+[gd_scene load_steps=2 format=3 uid="uid://cn2qu1d6g135n"]
+
+[ext_resource type="PackedScene" uid="uid://di6oaavrmd7cn" path="res://Characters/student1.tscn" id="1_dstf6"]
 
 [node name="Student" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Student" parent="." instance=ExtResource("1_dstf6")]

@@ -4,12 +4,10 @@ extends CharacterBody2D
 @export var speed = 280.0
 @export var jump_force = -350.0
 @export var gravity = 1250.0
-@export var attack_cooldown = 0.5
 
 # State variables
 var direction = "move_right"
 var is_attacking = false
-var can_attack = true
 var is_jumping = false
 
 @onready var coyote_timer = $CoyoteTime
@@ -20,9 +18,8 @@ var is_jumping = false
 func _physics_process(delta):
 	var was_on_floor = is_on_floor()
 	
-	if not is_attacking:
-		handle_movement()
-		handle_jump()
+	handle_movement()
+	handle_jump()
 	
 	apply_gravity(delta)
 	handle_attack()
@@ -37,7 +34,7 @@ func handle_movement():
 	velocity.x = direction * speed
 
 func handle_jump():
-	if Input.is_action_just_pressed("jump") and ( is_on_floor() or !coyote_timer.is_stopped()):
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
 		velocity.y = jump_force
 		is_jumping = true
 
@@ -49,19 +46,25 @@ func apply_gravity(delta):
 		is_jumping = false
 
 func handle_attack():
-	if Input.is_action_just_pressed("attack"):
+	if Input.is_action_just_pressed("attack") and !is_attacking:
 		is_attacking = true
 		attack_hitbox.disabled = false
+		# Play the attack animation
+		#animated_sprite.play("attack")
+		
+		# Use a timer to disable the hitbox after the attack duration
+		$AttackTimer.start()
+
 
 func update_animations():
-	if is_attacking:
-		animated_sprite.play("attack")
-	elif is_jumping:
-		animated_sprite.play("jump")
-	elif velocity.x != 0:
-		animated_sprite.play("run")
-	else:
-		animated_sprite.play("idle")
+	#if is_attacking:
+	#	animated_sprite.play("attack")
+	#elif is_jumping:
+	#	animated_sprite.play("jump")
+	#elif velocity.x != 0:
+	#	animated_sprite.play("run")
+	#else:
+	#	animated_sprite.play("idle")
 	
 	# Flip sprite based on direction
 	if velocity.x > 0:
@@ -69,12 +72,7 @@ func update_animations():
 	elif velocity.x < 0:
 		animated_sprite.flip_h = true
 
-func _on_attack_cooldown_timeout():
-	can_attack = true
+
+func _on_attack_timer_timeout() -> void:
 	is_attacking = false
 	attack_hitbox.disabled = true
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.has_method("take_damage"):
-		body.take_damage()
