@@ -36,7 +36,7 @@ func toggle_dying(enable: bool):
 func take_damage():
 	if is_dead:
 		return
-	print("umro sam")
+		
 	is_dead = true
 	sprite.texture = load("res://Resources/mrtavStudent.png")
 	toggle_dying(true)
