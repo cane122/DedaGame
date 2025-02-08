@@ -1,0 +1,8 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1739026137
+character_body_2d.gd::GDScript::-1::1739025725::0::1::::<>CharacterBody2D<>::
+icon.svg::CompressedTexture2D::3205219660321946340::1739025725::1739026054::1::::<><>::
+node_2d.tscn::PackedScene::3034040462278633893::1739025725::0::1::::<><>::uid://by5p5hnnndlxb::::res://Characters/character_body_2d.tscn
+::res://Characters/::1739025768
+character_body_2d.tscn::PackedScene::4133848980690388099::1739025725::0::1::::<><>::res://character_body_2d.gd
+::res://TileMap/::1739026137
