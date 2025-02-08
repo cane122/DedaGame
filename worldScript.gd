@@ -13,10 +13,11 @@ func _process(delta: float) -> void:
 func lower_anger(amount : int):
 	anger -= amount
 
-func _on_win_area_area_entered(area: Area2D) -> void:
-	get_tree().change_scene_to_file("res://Opening/opening.tscn")
-
-
 func _on_instakill_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		get_tree().change_scene_to_file("res://Opening/opening.tscn")
+
+
+func _on_win_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		get_tree().change_scene_to_file("res://Opening/opening.tscn")

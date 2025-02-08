@@ -50,9 +50,9 @@ shape = SubResource("RectangleShape2D_57eyw")
 position = Vector2(5648, 558)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea"]
-position = Vector2(-34.5, -4.5)
+position = Vector2(-34, -4.5)
 shape = SubResource("RectangleShape2D_xg5yq")
 
 [connection signal="area_entered" from="Instakill" to="." method="_on_instakill_area_entered"]
 [connection signal="body_entered" from="Instakill" to="." method="_on_instakill_body_entered"]
-[connection signal="area_entered" from="WinArea" to="." method="_on_win_area_area_entered"]
+[connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
