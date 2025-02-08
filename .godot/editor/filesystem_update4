@@ -4,3 +4,5 @@ res://TileMap/PlatformMapa.tscn
 res://worldScript.gd
 res://Characters/student.tscn
 res://character_body_2d.gd
+res://Opening/opening.tscn
+res://opening.gd

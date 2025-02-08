@@ -40,7 +40,10 @@ func _process(delta):
 
 func finish_sequence():
 	animation_player.stop()
-	get_tree().change_scene_to_file(main_scene)
+	get_tree().change_scene_to_file("res://node_2d.tscn")
 
 func _on_animation_finished(anim_name):
+	finish_sequence()
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	finish_sequence()
