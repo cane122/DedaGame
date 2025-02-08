@@ -9,6 +9,7 @@ extends CharacterBody2D
 var direction = "move_right"
 var is_attacking = false
 var is_jumping = false
+var counter = 0
 
 @onready var coyote_timer = $CoyoteTime
 @onready var gravity_timer = $GravityTimer
@@ -23,6 +24,7 @@ func _physics_process(delta):
 	
 	apply_gravity(delta)
 	handle_attack()
+	print(delta)
 	update_animations()
 	move_and_slide()
 	
@@ -57,14 +59,14 @@ func handle_attack():
 
 
 func update_animations():
-	#if is_attacking:
-	#	animated_sprite.play("attack")
+	if is_attacking:
+		animated_sprite.play("attack")
 	#elif is_jumping:
 	#	animated_sprite.play("jump")
-	#elif velocity.x != 0:
-	#	animated_sprite.play("run")
-	#else:
-	#	animated_sprite.play("idle")
+	elif velocity.x != 0:
+		animated_sprite.play("run")
+	else:
+		animated_sprite.play("idle")
 	
 	# Flip sprite based on direction
 	if velocity.x > 0:
