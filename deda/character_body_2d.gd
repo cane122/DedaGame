@@ -68,3 +68,8 @@ func _on_attack_cooldown_timeout():
 	can_attack = true
 	is_attacking = false
 	attack_hitbox.disabled = true
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage()
