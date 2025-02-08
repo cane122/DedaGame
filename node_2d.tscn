@@ -1,15 +1,57 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjhyg53ao7dq0"]
+[gd_scene load_steps=8 format=3 uid="uid://bjhyg53ao7dq0"]
 
 [ext_resource type="PackedScene" uid="uid://by5p5hnnndlxb" path="res://Characters/character_body_2d.tscn" id="1_g1any"]
 [ext_resource type="Script" path="res://worldScript.gd" id="1_p3nj6"]
 [ext_resource type="PackedScene" uid="uid://5fsg8ax5rl0w" path="res://TileMap/PlatformMapa.tscn" id="3_ty24y"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yop1"]
+size = Vector2(23.875, 3.40625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vb52e"]
+size = Vector2(11.375, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57eyw"]
+size = Vector2(34.9375, 3.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg5yq"]
+size = Vector2(127, 61)
+
 [node name="world" type="Node2D"]
 script = ExtResource("1_p3nj6")
+
+[node name="PlatformMapa" parent="." instance=ExtResource("3_ty24y")]
+physics_interpolation_mode = 1
+position = Vector2(333, -194)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_g1any")]
 position = Vector2(263, 72)
 
-[node name="PlatformMapa" parent="." instance=ExtResource("3_ty24y")]
-physics_interpolation_mode = 1
-position = Vector2(346, 104)
+[node name="Instakill" type="Area2D" parent="."]
+position = Vector2(632, 242)
+scale = Vector2(8, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Instakill"]
+position = Vector2(0.75, 7.375)
+shape = SubResource("RectangleShape2D_8yop1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Instakill"]
+position = Vector2(104.813, 6.95313)
+shape = SubResource("RectangleShape2D_8yop1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Instakill"]
+position = Vector2(231.625, 66.75)
+shape = SubResource("RectangleShape2D_vb52e")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Instakill"]
+position = Vector2(151.906, 99.625)
+shape = SubResource("RectangleShape2D_57eyw")
+
+[node name="WinArea" type="Area2D" parent="."]
+position = Vector2(5648, 558)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinArea"]
+position = Vector2(-34.5, -4.5)
+shape = SubResource("RectangleShape2D_xg5yq")
+
+[connection signal="area_entered" from="Instakill" to="." method="_on_instakill_area_entered"]
+[connection signal="area_entered" from="WinArea" to="." method="_on_win_area_area_entered"]

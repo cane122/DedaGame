@@ -12,3 +12,11 @@ func _process(delta: float) -> void:
 
 func lower_anger(amount : int):
 	anger -= amount
+
+func _on_win_area_area_entered(area: Area2D) -> void:
+	get_tree().change_scene_to_file("res://Opening/opening.tscn")
+
+
+func _on_instakill_area_entered(area: Area2D) -> void:
+	print("penis")
+	get_tree().change_scene_to_file("res://Opening/opening.tscn")

@@ -1,8 +1,6 @@
 res://node_2d.tscn
-res://Characters/character_body_2d.tscn
+res://Opening/opening.tscn
 res://TileMap/PlatformMapa.tscn
 res://worldScript.gd
-res://Characters/student.tscn
-res://character_body_2d.gd
-res://Opening/opening.tscn
 res://opening.gd
+res://Characters/student1.tscn

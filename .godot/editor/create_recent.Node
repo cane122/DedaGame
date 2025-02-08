@@ -1,5 +1,6 @@
+CollisionShape2D
+TileMapLayer
+Area2D
 Timer
 Camera2D
-CollisionShape2D
 AnimatedSprite2D
-TileMapLayer
