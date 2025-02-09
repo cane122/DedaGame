@@ -1,13 +1,7 @@
 res://node_2d.tscn
-res://worldScript.gd
+res://Objects/Door.gd
 res://Opening/opening.tscn
-res://Characters/student.tscn
-res://Characters/student1.tscn
 res://Characters/character_body_2d.tscn
 res://Objects/Vrata.tscn
 res://TileMap/PlatformMapa.tscn
 res://Opening/victory.tscn
-res://opening.gd
-res://Opening/victory.gd
-res://Characters/student.gd
-res://Characters/character_body_2d.gd

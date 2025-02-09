@@ -26,7 +26,6 @@ func openDoor() -> void:
 	# Change the texture to the opened door texture
 	sprite.texture = load("res://Resources/openedDoor.png")
 	sprite.translate(Vector2(8 , 0))
-	
 	call_deferred("_disable_collision")
 
 	# Optionally, you can add animations here if needed
