@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://5fsg8ax5rl0w"]
+[gd_scene load_steps=16 format=4 uid="uid://5fsg8ax5rl0w"]
 
 [ext_resource type="Texture2D" uid="uid://blkmaho176khh" path="res://Resources/beton.jpg" id="1_8cv4u"]
 [ext_resource type="Texture2D" uid="uid://b77pcgh5f13ni" path="res://Resources/zemlja_blok.jpg" id="2_bjuho"]
@@ -41,11 +41,6 @@ texture = ExtResource("3_e00tr")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j32q2"]
-0:0/0 = 0
-0:1/0 = 0
-0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_087p0"]
 texture = ExtResource("4_c08y4")
@@ -107,7 +102,6 @@ sources/2 = SubResource("TileSetAtlasSource_6qc00")
 sources/4 = SubResource("TileSetAtlasSource_087p0")
 sources/6 = SubResource("TileSetAtlasSource_0jhoh")
 sources/8 = SubResource("TileSetAtlasSource_lnv8r")
-sources/3 = SubResource("TileSetAtlasSource_j32q2")
 
 [node name="PlatformMapa" type="Node2D"]
 
