@@ -9,3 +9,5 @@ res://TileMap/PlatformMapa.tscn
 res://Opening/victory.tscn
 res://opening.gd
 res://Opening/victory.gd
+res://Characters/student.gd
+res://Characters/character_body_2d.gd

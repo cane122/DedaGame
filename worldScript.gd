@@ -15,9 +15,12 @@ func _on_instakill_body_entered(body: Node2D) -> void:
 func _on_win_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if AngerManager.students_killed == 0:
-			get_tree().change_scene_to_file("res://Opening/victory.tscn")
-		else: 
-			get_tree().change_scene_to_file("res://Opening/opening.tscn")
+			call_deferred("_change_scene_deferred", "res://Opening/victory.tscn")
+		else:
+			call_deferred("_change_scene_deferred", "res://Opening/opening.tscn")
+
+func _change_scene_deferred(scene_path: String) -> void:
+	get_tree().change_scene_to_file(scene_path)
 
 func _on_anger_changed(new_value: int) -> void:
 	# Handle any local updates needed when anger changes

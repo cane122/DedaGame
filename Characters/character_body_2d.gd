@@ -60,8 +60,8 @@ func handle_attack():
 func update_animations():
 	if is_attacking:
 		animated_sprite.play("attack")
-	#elif is_jumping:
-	#	animated_sprite.play("jump")
+	elif is_jumping:
+		animated_sprite.play("jump")
 	elif velocity.x != 0:
 		animated_sprite.play("run")
 	else:

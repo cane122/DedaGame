@@ -141,6 +141,84 @@ position = Vector2(16, 264)
 [node name="Student" parent="." instance=ExtResource("8_83rpt")]
 position = Vector2(487, 298)
 
+[node name="Student2" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(511, 298)
+
+[node name="Student3" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(535, 298)
+
+[node name="Student4" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(1736, 745)
+
+[node name="Student5" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(3437, 682)
+
+[node name="Student9" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(3458, 682)
+
+[node name="Student10" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(3479, 681)
+
+[node name="Student11" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(3815, 714)
+
+[node name="Student12" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4019, 698)
+
+[node name="Student14" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4086, 697)
+
+[node name="Student15" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4764, 746)
+
+[node name="Student18" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4785, 746)
+
+[node name="Student19" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4806, 746)
+
+[node name="Student20" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4827, 746)
+
+[node name="Student21" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4848, 746)
+
+[node name="Student22" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4868, 746)
+
+[node name="Student23" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4888, 746)
+
+[node name="Student24" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4911, 746)
+
+[node name="Student25" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4932, 746)
+
+[node name="Student26" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4952, 746)
+
+[node name="Student27" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4973, 746)
+
+[node name="Student16" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4743, 746)
+
+[node name="Student17" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4475, 730)
+
+[node name="Student13" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(4056, 698)
+
+[node name="Student6" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(3416, 682)
+
+[node name="Student7" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(3374, 682)
+
+[node name="Student8" parent="." instance=ExtResource("8_83rpt")]
+position = Vector2(3395, 682)
+
 [node name="Label" type="Label" parent="."]
 offset_left = -140.0
 offset_top = 220.0
