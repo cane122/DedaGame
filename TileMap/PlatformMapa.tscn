@@ -117,7 +117,9 @@ sources/8 = SubResource("TileSetAtlasSource_lnv8r")
 sources/5 = SubResource("TileSetAtlasSource_ktr7o")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wftf0"]
-font_size = 12
+line_spacing = 0.0
+font_size = 9
+font_color = Color(0, 0, 0, 1)
 
 [node name="PlatformMapa" type="Node2D"]
 
@@ -140,9 +142,11 @@ position = Vector2(16, 264)
 position = Vector2(487, 298)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -139.0
-offset_top = 215.0
-offset_right = -97.0
-offset_bottom = 238.0
-text = "Jones"
+offset_left = -140.0
+offset_top = 220.0
+offset_right = -41.0
+offset_bottom = 257.0
+text = "WASD - Kretanje
+Left click - Udarac
+(Udarac otvara vrata)"
 label_settings = SubResource("LabelSettings_wftf0")

@@ -1,23 +1,23 @@
+# Your original node modified to use the anger manager
 extends Node2D
 
-var anger : int = 5;
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	# Connect to the anger manager signals if needed
+	AngerManager.connect("anger_changed", _on_anger_changed)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func lower_anger(amount : int):
-	anger -= amount
+func lower_anger(amount: int) -> void:
+	AngerManager.modify_anger(-amount)
 
 func _on_instakill_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		get_tree().change_scene_to_file("res://Opening/opening.tscn")
 
-
 func _on_win_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		if AngerManager.students_killed == 0:
+			get_tree().change_scene_to_file("res://Opening/victory.tscnd")
 		get_tree().change_scene_to_file("res://Opening/opening.tscn")
+
+func _on_anger_changed(new_value: int) -> void:
+	# Handle any local updates needed when anger changes
+	pass

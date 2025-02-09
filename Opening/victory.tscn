@@ -1,0 +1,125 @@
+[gd_scene load_steps=9 format=3 uid="uid://btg1xiwto04ne"]
+
+[ext_resource type="Script" path="res://Opening/victory.gd" id="1_ct7ig"]
+[ext_resource type="Texture2D" uid="uid://hbq7lnr8vjwc" path="res://Resources/pic1.png" id="2_h0ub7"]
+[ext_resource type="Texture2D" uid="uid://tg01wdb3d3tf" path="res://Resources/pic2.png" id="3_mjini"]
+[ext_resource type="Texture2D" uid="uid://dasklb3mguqo" path="res://Resources/pic3.png" id="4_1oxbt"]
+
+[sub_resource type="Animation" id="Animation_1snl4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteContainer/Sprite1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteContainer/Sprite2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteContainer/Sprite3:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ua8vo"]
+resource_name = "intro"
+
+[sub_resource type="Animation" id="Animation_j1dof"]
+resource_name = "intro2"
+length = 7.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteContainer/Sprite1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteContainer/Sprite2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1e+06, 1.5, 63.9999),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteContainer/Sprite3:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5, 7.5),
+"transitions": PackedFloat32Array(388.023, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mkmuw"]
+_data = {
+"RESET": SubResource("Animation_1snl4"),
+"intro": SubResource("Animation_ua8vo"),
+"intro2": SubResource("Animation_j1dof")
+}
+
+[node name="Victory" type="Node2D"]
+script = ExtResource("1_ct7ig")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mkmuw")
+}
+
+[node name="SpriteContainer" type="CenterContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite1" type="Sprite2D" parent="SpriteContainer"]
+texture = ExtResource("2_h0ub7")
+
+[node name="Sprite2" type="Sprite2D" parent="SpriteContainer"]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("3_mjini")
+
+[node name="Sprite3" type="Sprite2D" parent="SpriteContainer"]
+self_modulate = Color(1, 1, 1, 0)
+texture = ExtResource("4_1oxbt")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
