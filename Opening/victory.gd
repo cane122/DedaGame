@@ -40,7 +40,7 @@ func _process(delta):
 
 func finish_sequence():
 	animation_player.stop()
-	get_tree().quit
+	get_tree().quit()
 
 func _on_animation_finished(anim_name):
 	finish_sequence()

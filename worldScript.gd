@@ -16,7 +16,8 @@ func _on_win_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if AngerManager.students_killed == 0:
 			get_tree().change_scene_to_file("res://Opening/victory.tscn")
-		get_tree().change_scene_to_file("res://Opening/opening.tscn")
+		else: 
+			get_tree().change_scene_to_file("res://Opening/opening.tscn")
 
 func _on_anger_changed(new_value: int) -> void:
 	# Handle any local updates needed when anger changes
