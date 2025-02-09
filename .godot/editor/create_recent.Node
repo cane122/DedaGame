@@ -1,3 +1,5 @@
+Label
+TextEdit
 CollisionShape2D
 Area2D
 TileMapLayer

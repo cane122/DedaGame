@@ -31,7 +31,7 @@ func _physics_process(delta):
 		coyote_timer.start()
 
 func handle_movement():
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * speed
 
 func handle_jump():

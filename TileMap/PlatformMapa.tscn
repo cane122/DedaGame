@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://5fsg8ax5rl0w"]
+[gd_scene load_steps=19 format=4 uid="uid://5fsg8ax5rl0w"]
 
 [ext_resource type="Texture2D" uid="uid://blkmaho176khh" path="res://Resources/beton.jpg" id="1_8cv4u"]
 [ext_resource type="Texture2D" uid="uid://b77pcgh5f13ni" path="res://Resources/zemlja_blok.jpg" id="2_bjuho"]
@@ -116,6 +116,9 @@ sources/6 = SubResource("TileSetAtlasSource_0jhoh")
 sources/8 = SubResource("TileSetAtlasSource_lnv8r")
 sources/5 = SubResource("TileSetAtlasSource_ktr7o")
 
+[sub_resource type="LabelSettings" id="LabelSettings_wftf0"]
+font_size = 12
+
 [node name="PlatformMapa" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -135,3 +138,11 @@ position = Vector2(16, 264)
 
 [node name="Student" parent="." instance=ExtResource("8_83rpt")]
 position = Vector2(487, 298)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -139.0
+offset_top = 215.0
+offset_right = -97.0
+offset_bottom = 238.0
+text = "Jones"
+label_settings = SubResource("LabelSettings_wftf0")

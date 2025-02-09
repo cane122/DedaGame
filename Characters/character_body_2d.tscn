@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://by5p5hnnndlxb"]
+[gd_scene load_steps=13 format=3 uid="uid://bfdu1g5qvuxfg"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_j3amv"]
-[ext_resource type="Texture2D" uid="uid://cxlk4gmb4rqwn" path="res://Resources/dekaF1.png" id="2_ib5ib"]
+[ext_resource type="Script" path="res://Characters/character_body_2d.gd" id="1_j3amv"]
+[ext_resource type="Texture2D" uid="uid://bsm7mm7bso7xv" path="res://Resources/dekaFF1.png" id="2_hq4ye"]
 [ext_resource type="Texture2D" uid="uid://u2l0kikmvub4" path="res://Characters/dekica2.png" id="2_vtihm"]
-[ext_resource type="Texture2D" uid="uid://j5na0fk80amy" path="res://Resources/dekaF2.png" id="3_gqddv"]
-[ext_resource type="Texture2D" uid="uid://cx3t7gkerkknj" path="res://Resources/dekaF3.png" id="4_3jsv2"]
+[ext_resource type="Texture2D" uid="uid://b0do351px4m3m" path="res://Resources/dekaFF2.png" id="3_fr4ue"]
+[ext_resource type="Texture2D" uid="uid://wxtdexkdt2gq" path="res://Resources/dekaFF3.png" id="4_y6bkv"]
 [ext_resource type="Texture2D" uid="uid://x1svc8jqbw3l" path="res://Resources/dekaW1.png" id="6_10ssj"]
 [ext_resource type="Texture2D" uid="uid://c3n2j8nqsx8hj" path="res://Resources/dekaW2.png" id="7_gnnt3"]
 [ext_resource type="Texture2D" uid="uid://c43uaje00yqyl" path="res://Resources/dekaW3.png" id="8_hu4r8"]
@@ -14,13 +14,13 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_ib5ib")
+"texture": ExtResource("2_hq4ye")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_gqddv")
+"texture": ExtResource("3_fr4ue")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_3jsv2")
+"texture": ExtResource("4_y6bkv")
 }],
 "loop": false,
 "name": &"attack",
