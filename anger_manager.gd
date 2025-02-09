@@ -4,32 +4,26 @@ extends Node
 signal anger_changed(new_value: int)
 signal students_killed_changed(new_value: int)
 
-var anger: int = 0
+var anger: int = 30
 var students_killed: int = 0
 
 func _ready() -> void:
 	# Initialize with default values when game starts
-	anger = 0
+	anger = 30
 	students_killed = 0
 
 func modify_anger(amount: int) -> void:
-	anger = clamp(anger + amount, 0, 30)
-	emit_signal("anger_changed", anger)
-	
-	# Check anger thresholds and update game state
-	check_anger_effects()
+	anger = clamp(anger - amount, 0, 30)
 
-func check_anger_effects() -> void:
-	# This will be connected to by sprites/effects in the game
+func check_anger_effects() -> String:
+	var state = "min"
 	if anger >= 30:
-		# Maximum anger state - all effects active
-		emit_signal("anger_state_changed", "max")
+		state = "max"
 	elif anger >= 15:
-		# Medium anger state - some effects active
-		emit_signal("anger_state_changed", "medium")
-	else:
-		# Minimum anger state - no effects
-		emit_signal("anger_state_changed", "min")
+		state = "medium"
+	
+	#emit_signal("anger_state_changed", state)
+	return state
 
 func student_killed() -> void:
 	students_killed += 1

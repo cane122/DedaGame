@@ -5,3 +5,6 @@ res://Characters/character_body_2d.tscn
 res://Objects/Vrata.tscn
 res://TileMap/PlatformMapa.tscn
 res://Opening/victory.tscn
+res://anger_manager.gd
+res://Characters/student.gd
+res://worldScript.gd
